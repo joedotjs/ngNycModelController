@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="js/two.js"></script>
+    </head>
+<body ng-app="ngNYC" ng-controller="MainCtrl">
+    <form name="myForm">
+        <pre>{{ myFavoriteTurtle }}</pre>
+        <pre>{{ myForm.turtle.$error | json }}</pre>
+        <input name="turtle" type="text" required whitelist="turtles" ng-model="myFavoriteTurtle" /><br /><br />
+        <span style="color:red;" ng-show="myForm.turtle.$invalid">That ain't no ninja turtle I ever heard of.</span>
+    </form>
+</body>

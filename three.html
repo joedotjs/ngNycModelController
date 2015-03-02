@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/three.js"></script>
+    <style>
+
+        pre {
+            font-size: 20px;
+            margin: 0 auto;
+        }
+
+        star-rating {
+            display: block;
+            position: relative;
+            width: 200px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+
+        input[type=text] {
+            width: 600px;
+            display: block;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .rating-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 90%;
+            z-index: -1;
+            background: #2d7abf;
+        }
+
+        .pic {
+            display: block;
+            width: 300px;
+            margin: 10px auto;
+        }
+
+
+    </style>
+</head>
+<body ng-app="ngNYC" ng-controller="MainCtrl">
+    <pre>{{ review | json }}</pre>
+    <form name="talkReview">
+        <input type="text" ng-model="review.text" />
+        <mad-joe ng-show="talkReview.rating.$dirty && talkReview.rating.$error.onlyGoodRatings"></mad-joe>
+        <we-cool ng-show="!talkReview.rating.$error.onlyGoodRatings"></we-cool>
+        <star-rating name="rating" ng-model="review.rating" only-good-ratings></star-rating>
+    </form>
+</body>
+</html>

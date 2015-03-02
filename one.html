@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/one.js"></script>
+    <style>
+        color-palette {
+            padding: 50px;
+            display: block;
+        }
+        color-palette > div {
+            float: left;
+            width: 50px;
+            height: 50px;
+        }
+        rgb-slider {
+            display: block;
+            width: 200px;
+            margin: 40px 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body ng-app="ngNYC">
+    <color-palette>
+        <rgb-slider></rgb-slider>
+        <rgb-slider></rgb-slider>
+        <rgb-slider></rgb-slider>
+        <rgb-slider></rgb-slider>
+    </color-palette>
+</body>
+</html>
